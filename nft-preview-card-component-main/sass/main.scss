@@ -1,0 +1,153 @@
+//* font----------------
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+$font: "Outfit", sans-serif;
+$bold: 600;
+$regular: 400;
+$light: 300;
+//*color ----------------
+
+$SoftBlue: hsl(215, 51%, 70%);
+$Cyan: hsl(178, 100%, 50%);
+$VeryDarkBlue: hsl(217, 54%, 11%);
+$DarkBlue: hsl(216, 50%, 16%);
+$Blue: hsl(215, 32%, 27%);
+$White: hsl(0, 0%, 100%);
+
+//* mixing
+@mixin flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//** Generale styling
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
+body {
+  background-color: $VeryDarkBlue;
+}
+main {
+  @include flexbox();
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  margin-top: 10px;
+}
+//* general classes
+.on-hover-filter {
+  position: absolute;
+  height: 98%;
+  width: 97%;
+  background-color: hsla(178, 100%, 50%, 0.411);
+  opacity: 0;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+}
+.on-hover-filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.bold {
+  font-weight: 600;
+}
+.line {
+  height: 2.5px;
+  width: 100%;
+  background-color: $Blue;
+  border-radius: 5px;
+  opacity: 0.7;
+  margin: 10px 0;
+}
+.highlight {
+  color: $Cyan;
+}
+
+//* containers
+
+.container {
+  font-family: $font;
+  width: 320px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: $DarkBlue;
+  margin-top: 10px;
+  .card {
+    @include flexbox();
+    flex-direction: column;
+  }
+}
+.status {
+  @include flexbox();
+  width: 100%;
+  justify-content: space-between;
+  margin: 10px 0 5px 0;
+}
+.person {
+  @include flexbox();
+  margin: 10px 0 0 0;
+  width: 100%;
+  justify-content: flex-start;
+}
+.show {
+  position: relative;
+}
+.attribute {
+  margin: 20px;
+  text-align: center;
+}
+//* Images styling
+
+.main-pic {
+  width: 97%;
+  border-radius: 15px;
+}
+.avatar {
+  width: 35px;
+  margin-right: 15px;
+  border-radius: 50%;
+  border: 1px solid $White;
+}
+//** Typography
+
+.title {
+  align-self: flex-start;
+  font-size: 22px;
+  margin: 15px 0 12px 0;
+  padding: 3px;
+  color: $White;
+}
+.title:hover {
+  color: $Cyan;
+  cursor: pointer;
+}
+.text {
+  color: $SoftBlue;
+  line-height: 28px;
+  a {
+    color: $Cyan;
+  }
+}
+.name {
+  color: $White;
+  cursor: pointer;
+}
+.name:hover {
+  color: $Cyan;
+}
+//* icons
+.fa-eye {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+}
